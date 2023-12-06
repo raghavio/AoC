@@ -14,6 +14,10 @@
 (defn name-to-number-fn [name]
   (get name-to-number name name))
 
+(defn get
+      []
+      nil)
+
 (defn calibration-value
   [text]
   (let [numbers-name-piped (str/join  "|" (keys name-to-number)) ;; Names of all numbers separated by | for regex
