@@ -1,10 +1,16 @@
-(require '[clojure.string :as str])
+(ns seedz 
+  (:require [clojure.string :as str]))
 
 (def input-content (slurp "2023/05/input"))
 (def seeds-str (first (str/split input-content #"\n\n")))
 (def mappings-str (rest (str/split input-content #"\n\n")))
 
-(def seeds ((comp (partial map bigint) (partial re-seq #"\d+")) seeds-str))
+(def seeds-range ((comp (partial mapv bigint) (partial re-seq #"\d+")) seeds-str))
+
+(defn seeds
+  [seeds-range]
+  (map (fn [[s len]]
+         [s (+ s len -1)]) (partition-all 2 seeds-range)))
 
 (def all-mappings
   (mapv (fn [s] 
@@ -25,4 +31,6 @@
 
 (comment
   ; Part 1
-  (apply min (vals (seeds-to-location seeds all-mappings))))
+  (apply min (vals (seeds-to-location seeds-range all-mappings)))
+  ; Part 2 - will do later hopefully.
+  ())
