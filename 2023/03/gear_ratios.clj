@@ -1,6 +1,6 @@
 (require '[clojure.string :as str])
 
-(def schematic ((comp str/split-lines slurp) "day_3_input"))
+(def schematic ((comp str/split-lines slurp) "2023/03/day_3_input"))
 
 (defn symbol?
   "Checks if the given string has any character other than words, numbers or ."

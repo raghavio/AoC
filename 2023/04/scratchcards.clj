@@ -1,7 +1,7 @@
 (require '[clojure.string :as str]
          '[clojure.set :as set])
 
-(def scratchcards ((comp str/split-lines slurp) "04/input"))
+(def scratchcards ((comp str/split-lines slurp) "2023/04/input"))
 
 (defn split-by-space 
   [s]

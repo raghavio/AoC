@@ -1,6 +1,6 @@
 (require '[clojure.string :as str])
 
-(def games ((comp str/split-lines slurp) "day_2_input"))
+(def games ((comp str/split-lines slurp) "2023/02/day_2_input"))
 
 (defn largest-x-cube-in-game
   "Fetches the largest cube count of the provided color in a game."

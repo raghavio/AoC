@@ -14,10 +14,6 @@
 (defn name-to-number-fn [name]
   (get name-to-number name name))
 
-(defn get
-      []
-      nil)
-
 (defn calibration-value
   [text]
   (let [numbers-name-piped (str/join  "|" (keys name-to-number)) ;; Names of all numbers separated by | for regex
@@ -29,7 +25,7 @@
                            (name-to-number-fn last-digit)))))
 
 
-(def file-content-str (slurp "./day_1_input"))
+(def file-content-str (slurp "2023/01/day_1_input"))
 
 (def texts (str/split  file-content-str #"\n"))
 
